@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
-using System.Drawing;
 using System.Web.Mvc;
 
 namespace FileUploadProject.Controllers
