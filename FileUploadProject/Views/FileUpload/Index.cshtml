@@ -1,0 +1,33 @@
+﻿@model IEnumerable < FileUploadProject.Models.FileUpload>
+
+@{
+    ViewBag.Title = "File Uploads";
+}
+
+<h2>File Uploads</h2>
+
+<p>
+    @Html.ActionLink("Upload New File", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.FileName)</th>
+        <th>@Html.DisplayNameFor(model => model.Description)</th>
+        <th>@Html.DisplayNameFor(model => model.UploadDate)</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.FileName)</td>
+            <td>@Html.DisplayFor(modelItem => item.Description)</td>
+            <td>@Html.DisplayFor(modelItem => item.UploadDate)</td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.FileId }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.FileId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FileId })
+            </td>
+        </tr>
+    }
+</table>

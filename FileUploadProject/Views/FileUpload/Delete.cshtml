@@ -1,0 +1,33 @@
+﻿@model FileUploadProject.Models.FileUpload
+
+@{
+    ViewBag.Title = "Delete File";
+}
+
+<h2>Delete File</h2>
+
+<h3>Are you sure you want to delete this file?</h3>
+<div>
+    <h4>FileUpload</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.FileName)</dt>
+        <dd>@Html.DisplayFor(model => model.FileName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Description)</dt>
+        <dd>@Html.DisplayFor(model => model.Description)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.UploadDate)</dt>
+        <dd>@Html.DisplayFor(model => model.UploadDate)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.UploadedBy)</dt>
+        <dd>@Html.DisplayFor(model => model.UploadedBy)</dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <input type="submit" value="Delete" class="btn btn-danger" />
+            @Html.ActionLink("Back to List", "Index");
+    }
+</div>
